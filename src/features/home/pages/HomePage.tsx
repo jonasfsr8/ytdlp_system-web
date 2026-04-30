@@ -26,7 +26,7 @@ export function HomePage() {
         <article className="highlight-card">
           <span className="eyebrow">Operation</span>
           <h2>URLs routes process</h2>
-          <p>{"<>"}</p>
+          <p>Check if the video supports the chosen quality.</p>
         </article>
 
         <article className="stats-card">

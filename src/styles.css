@@ -163,6 +163,16 @@ select {
   color: rgba(248, 245, 240, 0.38);
 }
 
+.field__control {
+  background-color: #1a1a2e;
+  color: #fff;
+}
+
+.field__control option {
+  background-color: #1a1a2e;
+  color: #fff;
+}
+
 .field__error {
   color: #fda4af;
   font-size: 0.84rem;

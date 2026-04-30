@@ -25,7 +25,7 @@ export function RegisterPage() {
     <div className="auth-page">
       <AuthCard
         title="Create your account"
-        subtitle="<->"
+        subtitle="That's if you want to, of course."
         footerText="Already have an account?"
         footerLinkLabel="Log in"
         footerLinkTo="/login"

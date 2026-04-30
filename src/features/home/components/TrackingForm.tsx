@@ -39,7 +39,7 @@ export function TrackingForm({ formats }: MediaFormProps) {
 
   const formatOptions = allFormats.map((item) => ({
     label: `${item.type} - ${item.quality}`,
-    value: `${item.type}_${item.quality}`,
+    value: `${item.quality}`,
   }));
 
   return (
