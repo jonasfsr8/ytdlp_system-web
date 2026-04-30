@@ -26,7 +26,7 @@ export function useAuth() {
 
       setAuth(response);
 
-      toast.success("login successfully.");
+      toast.success("login successfully");
       navigate("/");
     } catch (err: any) {
       setError(getErrorMessage(err));
@@ -41,7 +41,7 @@ export function useAuth() {
       setIsLoading(true);
       await AuthService.register(payload);
 
-      toast.success("Registration completed.");
+      toast.success("Registration completed");
       navigate("/login");
     } catch (err: any) {
       setError(getErrorMessage(err));
