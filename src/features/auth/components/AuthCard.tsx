@@ -20,7 +20,7 @@ export function AuthCard({
   return (
     <section className="auth-card">
       <div className="auth-card__hero">
-        <span className="eyebrow">url catch</span>
+        <span className="eyebrow">{"url catch <->"}</span>
         <h1>{title}</h1>
         <p>{subtitle}</p>
       </div>

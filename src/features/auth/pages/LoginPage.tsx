@@ -16,7 +16,7 @@ export function LoginPage() {
 
     try {
       await login({ email, password });
-      
+
     } catch {
       return;
     }
@@ -25,10 +25,10 @@ export function LoginPage() {
   return (
     <div className="auth-page">
       <AuthCard
-        title="Login to your account"
-        subtitle="Manage URL submissions with a modern, scalable, and growth-ready foundation."
+        title="Starting process"
+        subtitle="Execute ytdlp commands to retrieve videos."
         footerText="Don't have an account yet?"
-        footerLinkLabel="Create registration"
+        footerLinkLabel="Registration"
         footerLinkTo="/register"
       >
         <form className="stack-lg" onSubmit={handleSubmit}>
