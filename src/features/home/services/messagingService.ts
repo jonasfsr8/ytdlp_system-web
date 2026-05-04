@@ -56,4 +56,14 @@ export const MessagingService = {
 
     return data;
   },
+
+  async getMessagingStatus() {
+    const { data } = await api.get("/messaging/source-messaging-status");
+
+    if (!data.success) {
+      throw new Error(data.message || "error sending message");
+    }
+
+    return data.response;
+  },
 }

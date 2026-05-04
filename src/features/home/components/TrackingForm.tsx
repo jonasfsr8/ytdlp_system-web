@@ -5,6 +5,7 @@ import { Button } from "../../../shared/components/Button";
 import { FeedbackMessage } from "../../../shared/components/FeedbackMessage";
 import { InputField, SelectField } from "../../../shared/components/FormField";
 import { useAsyncAction } from "../../../shared/hooks/useAsyncAction";
+import { useMessagingStatus } from "../hooks/useMessagingStatus";
 
 interface MediaFormProps {
   formats: FormatResponse | null;
@@ -15,10 +16,16 @@ export function TrackingForm({ formats }: MediaFormProps) {
   const [payload, setPayload] = useState("");
   const [format, setFormat] = useState("");
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const { isOnline } = useMessagingStatus();
 
   async function handleSubmit(event: SubmitEvent<HTMLFormElement>) {
     event.preventDefault();
     setSuccessMessage(null);
+
+    if (payload == "") {
+      toast.error("A URL is required for processing.");
+      return;
+    }
 
     try {
       await execute(() => MessagingService.sendMessage({ payload, format }));
@@ -63,7 +70,9 @@ export function TrackingForm({ formats }: MediaFormProps) {
           setSuccessMessage(null);
           setPayload(e.target.value);
         }}
+        placeholder="https://www.youtube.com/watch..."
         required
+        disabled={!isOnline}
       />
 
       <SelectField
