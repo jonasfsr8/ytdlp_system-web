@@ -48,7 +48,7 @@ export const MessagingService = {
   },
 
   async sendMessage(payload: UrlTrackingPayload) {
-    const { data } = await api.post("/messaging/url_tracking", payload);
+    const { data } = await api.post("/messaging/url-tracking", payload);
 
     if (!data.success) {
       throw new Error(data.message || "error sending message");
@@ -58,7 +58,7 @@ export const MessagingService = {
   },
 
   async getMessagingStatus() {
-    const { data } = await api.get("/messaging/source-messaging-status");
+    const { data } = await api.get("/messaging/status-connection-rabbitmq");
 
     if (!data.success) {
       throw new Error(data.message || "error sending message");
